@@ -23,8 +23,8 @@ production:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: xwubifcvdgzyne
-  password: 8r602eKtvcFe4ysXTjPzgk0TQj
+  username: zmhhetcgglaokj
+  password: 0SNlEvZccL2Gal-hWuTzOLqo3D
   database: d7i6oe294o3jh0
   pool: 5
   timeout: 5000
