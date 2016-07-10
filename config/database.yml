@@ -23,9 +23,9 @@ production:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: ubuntu
-  password: password
-  database: app_production
+  username: xwubifcvdgzyne
+  password: 8r602eKtvcFe4ysXTjPzgk0TQj
+  database: d7i6oe294o3jh0
   pool: 5
   timeout: 5000
   template: template0
