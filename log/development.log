@@ -2057,3 +2057,1059 @@ Processing by MoviesController#index as HTML
   [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
   Rendered movies/index.html.haml within layouts/application (3.9ms)
 Completed 200 OK in 94ms (Views: 92.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 13:19:46 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 13:19:46 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies"."rating" FROM "movies" GROUP BY "movies"."rating"
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (43.3ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (undefined method `was_checked?' for #<#<Class:0x007fbcf1feeda8>:0x007fbcf1fd6780>):
+     5:   Include:
+     6:   - @all_ratings.each do |rating|
+     7:     = rating
+     8:     %input{type: 'checkbox', name: "ratings[]", id: "ratings_#{rating}", value: "#{rating}", checked: was_checked?(rating)}
+     9:   %input#ratings_submit{type: 'submit', value: 'Refresh'}
+    10: 
+    11: %table#movies
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml___3994055396222294707_70224745245180'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml___3994055396222294707_70224745245180'
+  app/views/movies/index.html.haml:4:in `_app_views_movies_index_html_haml___3994055396222294707_70224745245180'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (113.0ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 13:21:10 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 13:21:10 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies"."rating" FROM "movies" GROUP BY "movies"."rating"
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (33.3ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `was_checked?' for #<#<Class:0x007fbcf1feeda8>:0x007fbced020308>):
+     5:   Include:
+     6:   - @all_ratings.each do |rating|
+     7:     = rating
+     8:     %input{type: 'checkbox', name: "ratings[]", id: "ratings_#{rating}", value: "#{rating}", checked: was_checked?(rating)}
+     9:   %input#ratings_submit{type: 'submit', value: 'Refresh'}
+    10: 
+    11: %table#movies
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml___3994055396222294707_70224696497900'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml___3994055396222294707_70224696497900'
+  app/views/movies/index.html.haml:4:in `_app_views_movies_index_html_haml___3994055396222294707_70224696497900'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.6ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 13:26:28 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 13:26:28 +0000
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/models/movie.rb:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+6 lines (5 sloc)  93 Bytes
+       ^):
+  app/models/movie.rb:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+  app/controllers/movies_controller.rb:21:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.1ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 13:27:03 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 13:27:03 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 13:27:03 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date" for 68.226.51.193 at 2016-07-10 13:27:06 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"release_date"}
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date" for 68.226.51.193 at 2016-07-10 13:27:06 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 13:27:07 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 13:27:07 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 13:33:40 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 13:33:41 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 13:33:41 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 13:33:49 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/3/edit" for 68.226.51.193 at 2016-07-10 13:33:52 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:24:03 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:24:03 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:24:03 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:24:05 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (33.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `same_director_path' for #<#<Class:0x007fbcedf231c0>:0x007fbcee69e148>):
+    18: %p#description= @movie.description
+    19: 
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: = link_to 'Find Movies With Same Director', same_director_path(@movie)
+    22: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    23: = link_to 'Back to movie list', movies_path
+  app/views/movies/show.html.haml:21:in `_app_views_movies_show_html_haml__2951473086235575605_70224715245360'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.4ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:24:24 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:24:24 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:24:24 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:24:24 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:24:24 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:24:24 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:24:24 +0000
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:24:27 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (34.4ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `same_director_path' for #<#<Class:0x007fbcedf231c0>:0x007fbcf213a360>):
+    18: %p#description= @movie.description
+    19: 
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: = link_to 'Find Movies With Same Director', same_director_path(@movie)
+    22: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    23: = link_to 'Back to movie list', movies_path
+  app/views/movies/show.html.haml:21:in `_app_views_movies_show_html_haml__2951473086235575605_70224715245360'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.0ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:26:12 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:26:13 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:26:13 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:26:13 +0000
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:29:23 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:29:24 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:29:24 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (49.0ms)
+Completed 200 OK in 322ms (Views: 308.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:29:24 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:29:24 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:29:24 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:29:24 +0000
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:29:29 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 35ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:30:09 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:30:09 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:30:09 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:30:09 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:30:09 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:30:14 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:30:14 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:30:17 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:30:25 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:30:26 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:30:26 +0000
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:30:26 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:30:26 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:30:28 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:30:28 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:30:29 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:30:31 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:30:31 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (117.2ms)
+Completed 200 OK in 133ms (Views: 131.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:32:20 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/show.html.haml:20: syntax error, unexpected tREGEXP_BEG, expecting keyword_do or '{' or '('
+...', edit_movie_path(@movie)<br />
+...                               ^
+/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/show.html.haml:20: unterminated regexp meets end of file
+/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/show.html.haml:20: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/movies/show.html.haml:20: syntax error, unexpected tREGEXP_BEG, expecting keyword_do or '{' or '('
+  app/views/movies/show.html.haml:20: unterminated regexp meets end of file
+  app/views/movies/show.html.haml:20: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (26.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (108.6ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:32:33 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:33:27 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:33:27 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:33:29 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/show.html.haml:20: syntax error, unexpected '='
+...it', edit_movie_path(@movie), = link_to 'Find Movies With Sa...
+...                               ^):
+  app/views/movies/show.html.haml:20: syntax error, unexpected '='
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.5ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:33:37 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/show.html.haml:20: unterminated regexp meets end of file
+/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/show.html.haml:20: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/movies/show.html.haml:20: unterminated regexp meets end of file
+  app/views/movies/show.html.haml:20: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.7ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:37:25 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:37:25 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:37:25 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:37:25 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:37:25 +0000
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:38:08 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml__1954515093272266128_69898280783720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.6ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:39:02 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movie.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml__1954515093272266128_69898451118780'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (82.3ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:39:15 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml__1954515093272266128_69898288308860'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.7ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:39:57 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movie.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml__1954515093272266128_69898283551300'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.0ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:40:25 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/sameDirector.html.haml:12: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/movies/sameDirector.html.haml:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.5ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:40:43 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views/movies/sameDirector.html.haml:12: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/movies/sameDirector.html.haml:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.5ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:40:57 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml__1954515093272266128_69898351578600'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.1ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:41:49 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml__1954515093272266128_69898285764980'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.7ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:46:38 +0000
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:47:11 +0000
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:48:21 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:48:21 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:48:21 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (56.3ms)
+Completed 200 OK in 372ms (Views: 353.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:48:22 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:48:22 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:48:22 +0000
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:48:22 +0000
+
+
+Started GET "/movies/3" for 68.226.51.193 at 2016-07-10 14:48:27 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 38ms (Views: 26.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/3/sameDirector" for 68.226.51.193 at 2016-07-10 14:48:42 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"3"}
+  Rendered movies/sameDirector.html.haml within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml___337783471394071786_70187570284880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.3ms)
+
+
+Started GET "/movies/3/sameDirector" for 68.226.51.193 at 2016-07-10 14:50:30 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"3"}
+  Rendered movies/sameDirector.html.haml within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml___337783471394071786_70187570284880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (111.2ms)
+
+
+Started GET "/movies/3/sameDirector" for 68.226.51.193 at 2016-07-10 14:50:45 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"3"}
+  Rendered movies/sameDirector.html.haml within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml___337783471394071786_70187570284880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.3ms)
+
+
+Started GET "/movies/3/sameDirector" for 68.226.51.193 at 2016-07-10 14:54:12 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"3"}
+  Rendered movies/sameDirector.html.haml within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml___337783471394071786_70187570284880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (119.2ms)
+
+
+Started GET "/movies/3/sameDirector" for 68.226.51.193 at 2016-07-10 14:55:27 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"3"}
+  Rendered movies/sameDirector.html.haml within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml___337783471394071786_70187570284880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.6ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:55:55 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:55:56 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 25ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:55:56 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (57.8ms)
+Completed 200 OK in 399ms (Views: 383.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:55:59 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.6ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (140.9ms)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `index' for #<#<Class:0x0000000487aad8>:0x007f41059a1fd0>):
+    19: 
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: %br
+    22: = link_to 'Find Movies With Same Director', :controller => :samedirector, :action => index
+    23: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    24: = link_to 'Back to movie list', movies_path
+  app/views/movies/show.html.haml:22:in `_app_views_movies_show_html_haml__4223919051368096310_69958621738840'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (115.2ms)
+
+
+Started GET "/" for 68.226.51.193 at 2016-07-10 14:58:42 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:58:42 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:58:42 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (11.3ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:58:46 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (28.3ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `same_director_path' for #<#<Class:0x007f4105e002c0>:0x007f4105c72480>
+Did you mean?  sameDirector_path
+               sameDirector_url):
+    19: 
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: %br
+    22: = link_to 'Find Movies With Same Director', same_director_path(@movie)
+    23: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    24: = link_to 'Back to movie list', movies_path
+  app/views/movies/show.html.haml:22:in `_app_views_movies_show_html_haml__4223919051368096310_69958629563820'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (36.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.4ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:59:05 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `samedirector_path' for #<#<Class:0x007f4105e002c0>:0x007f4106aff048>
+Did you mean?  sameDirector_path
+               sameDirector_url):
+    19: 
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: %br
+    22: = link_to 'Find Movies With Same Director', samedirector_path(@movie)
+    23: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    24: = link_to 'Back to movie list', movies_path
+  app/views/movies/show.html.haml:22:in `_app_views_movies_show_html_haml__4223919051368096310_69958630895220'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (92.2ms)
+
+
+Started GET "/movies/2" for 68.226.51.193 at 2016-07-10 14:59:34 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:59:34 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:59:34 +0000
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:59:34 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:59:34 +0000
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:59:36 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  Rendered movies/sameDirector.html.haml within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: %h2 Related movies by director
+    4: 
+    5: %ul#related_movies
+    6:   - @movies.each do |movie|
+    7:     %li
+    8:       = movie.title
+    9: 
+  app/views/movies/sameDirector.html.haml:6:in `_app_views_movies_same_irector_html_haml__489178164057982529_69958628297800'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.4ms)
+
+
+Started GET "/movies/2/sameDirector" for 68.226.51.193 at 2016-07-10 14:59:53 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+DEPRECATION WARNING: This dynamic method is deprecated. Please use e.g. Post.where(...).all instead. (called from sameDirector at /home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/controllers/movies_controller.rb:73)
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = ?  [["director", "Ridley Scott"]]
+  Rendered movies/sameDirector.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 20.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 68.226.51.193 at 2016-07-10 14:59:54 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 68.226.51.193 at 2016-07-10 14:59:54 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 68.226.51.193 at 2016-07-10 14:59:54 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 68.226.51.193 at 2016-07-10 14:59:54 +0000
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 14:59:58 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 14:59:58 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 167ms (Views: 24.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for 68.226.51.193 at 2016-07-10 15:00:00 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/1/sameDirector" for 68.226.51.193 at 2016-07-10 15:00:01 +0000
+Processing by MoviesController#sameDirector as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: This dynamic method is deprecated. Please use e.g. Post.where(...).all instead. (called from sameDirector at /home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/controllers/movies_controller.rb:73)
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = ?  [["director", "George Lucas"]]
+  Rendered movies/sameDirector.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 128ms (Views: 124.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 68.226.51.193 at 2016-07-10 15:00:04 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://bens-workspace-bsprunger.c9users.io/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 68.226.51.193 at 2016-07-10 15:00:04 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (57.0ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.4ms)

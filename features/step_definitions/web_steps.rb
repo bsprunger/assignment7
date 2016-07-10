@@ -52,7 +52,6 @@ end
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
-
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
@@ -89,7 +88,6 @@ end
 When /^(?:|I )check "([^"]*)"$/ do |field|
   check(field)
 end
-
 When /^(?:|I )uncheck "([^"]*)"$/ do |field|
   uncheck(field)
 end
@@ -97,11 +95,9 @@ end
 When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
-
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
-
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
@@ -120,6 +116,21 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
+Then /^(?:|I )should be on (.+)$/ do |page_name|
+  current_path = URI.parse(current_url).path
+  if current_path.respond_to? :should
+    current_path.should == path_to(page_name)
+  else
+    assert_equal path_to(page_name), current_path
+  end
+end
+
+Then /^(?:|I )should either be on (.+) or (.+)$/ do |page_name, page_name2|
+  current_path = URI.parse(current_url).path
+  expect(current_path).to satisfy{|s| [path_to(page_name), path_to(page_name2)].include? s}
+end
+
+
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_no_content(text)
@@ -130,7 +141,6 @@ end
 
 Then /^(?:|I )should not see \/([^\/]*)\/$/ do |regexp|
   regexp = Regexp.new(regexp)
-
   if page.respond_to? :should
     page.should have_no_xpath('//*', :text => regexp)
   else
@@ -165,17 +175,14 @@ end
 Then /^the "([^"]*)" field should have the error "([^"]*)"$/ do |field, error_message|
   element = find_field(field)
   classes = element.find(:xpath, '..')[:class].split(' ')
-
   form_for_input = element.find(:xpath, 'ancestor::form[1]')
   using_formtastic = form_for_input[:class].include?('formtastic')
   error_class = using_formtastic ? 'error' : 'field_with_errors'
-
   if classes.respond_to? :should
     classes.should include(error_class)
   else
     assert classes.include?(error_class)
   end
-
   if page.respond_to?(:should)
     if using_formtastic
       error_paragraph = element.find(:xpath, '../*[@class="inline-errors"][1]')
@@ -227,14 +234,6 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
   end
 end
  
-Then /^(?:|I )should be on (.+)$/ do |page_name|
-  current_path = URI.parse(current_url).path
-  if current_path.respond_to? :should
-    current_path.should == path_to(page_name)
-  else
-    assert_equal path_to(page_name), current_path
-  end
-end
 
 Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query

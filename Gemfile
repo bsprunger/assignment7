@@ -5,6 +5,10 @@ gem 'rails', '4.2.6'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+
+gem 'activerecord-deprecated_finders', require: 'active_record/deprecated_finders'
+gem 'protected_attributes'
+
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'sqlite3'
