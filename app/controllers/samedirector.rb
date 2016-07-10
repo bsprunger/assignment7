@@ -1,8 +1,4 @@
-class MoviesController < ApplicationController
-  
-  def movie_params
-    params.require(:movie).permit(:title, :rating, :director, :description, :release_date)
-  end
+class  SamedirectorController < ApplicationController
   
   def index
       @movie = Movie.all
