@@ -4,7 +4,7 @@ ruby '2.3.0'
 gem 'rails', '4.2.6'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'pg'
 
 gem 'activerecord-deprecated_finders', require: 'active_record/deprecated_finders'
 gem 'protected_attributes'
@@ -26,7 +26,7 @@ group :test do
   gem 'simplecov', :require => false
 end
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 # Gems used only for assets and not required
